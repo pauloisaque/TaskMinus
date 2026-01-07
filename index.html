@@ -32,8 +32,8 @@
 <section id="task-page" class="page" hidden>
   <div>
     <button id="task-page-back-button" class="back-button"><</button>
-    <button id="task-page-trash-button">Lixeira</button>
-    <button id="task-page-more-options-button">Três pontinhos</button>
+    <button id="task-page-trash-button" class="task-page-trash-button">Lixeira</button>
+    <button id="task-page-more-options-button" class="task-page-more-options-button">Três pontinhos</button>
   </div>
   <h2 id="task-page-task-name">Tarefa 1</h2>
   <button id="task-page-add-tag-button" class="button">+ Adicionar tag</button>
@@ -48,32 +48,48 @@
 </section>
 
 <section id="tasks-screen-page" class="page" hidden>
-  <button id="tasks-screen-page-search-button" class="button">Lupa</button>
-  <button id="tasks-screen-page-dark-mode-button" class="dark-mode-button">Emoji da lua</button>
-  <h2>Tarefas</h2> 
-  <div id="tasks-screen-page-task-list"></div>
+  <div class="tasks-screen-page-header">
+    <button id="tasks-screen-page-search-button" class="tasks-screen-page-search-button">Lupa</button>
+    <h2>Tarefas</h2> 
+    <button id="tasks-screen-page-dark-mode-button" class="tasks-screen-page-dark-mode-button">Emoji da lua</button>
+  </div>
+  <div id="tasks-screen-page-task-list">
+  </div>
   <button id="tasks-screen-page-add-project-button" class="add-button">+</button>
   <button id="tasks-screen-page-add-task-button" class="add-button">+</button>
 </section>
 
 <section id="configurations-page" class="page" hidden>
-  <button id="configurations-page-back-button" class="back-button"><</button>
+  <div class="configurations-page-header">
+    <button id="configurations-page-back-button" class="back-button"><</button>
     <h2>Configurações</h2>
+  </div>
+  
+  <div class="configurations-section">
     <div id="configurations-page-profile-photo">(foto da pessoa)</div>
     <button id="configurations-page-change-photo-button" class="button">Alterar foto</button>
-  <div>
+  </div>
+
+  <div class="configurations-section">
     <p id="configurations-page-profile-name">Nome da pessoa</p>
     <button id="configurations-page-change-name-button" class="button">Alterar nome</button>
   </div>
-  <div>
+
+  <div class="configurations-section">
     <button id="configurations-page-notifications-button" class="button">Notificações</button>
     <button id="configurations-page-backup-button" class="button">Backup</button>
     <button id="configurations-page-activity-history-button" class="button">Histórico de atividades</button>
     <button id="configurations-page-completed-tasks-history-button" class="button">Histórico de tarefas concluídas</button>
+  </div>
+
+  <div class="configurations-section">
     <div>
       <p>Escolher tema</p>
       <button id="configurations-page-theme-choice-button" class="button">(Padrão)</button>
     </div>
+  </div>
+
+  <div class="configurations-section">
     <div>
       <p>Aumentar fonte</p>
       <button id="configurations-page-decrease-font-button" class="button">-</button>
@@ -90,13 +106,21 @@
 </section>
 
 <section id="bot-page" class="page" hidden>
-  <button id="bot-page-back-button" class="back-button"><</button>
-  <h2>Bot</h2>
-  <button id="bot-page-information-button" class="button">i</button>
-  <div id="bot-page-image">Bot image</div>
-  <p>Olá! O que temos para hoje? 🤖</p>
-  <input id="bot-page-input" type="text" placeholder="Digite sua mensagem aqui...">
-  <button id="bot-page-send-button" class="send-button">></button>
+  <div class="bot-page-header">
+    <button id="bot-page-back-button" class="back-button"><</button>
+    <h2>Bot</h2>
+    <button id="bot-page-information-button" class="button">i</button>
+  </div>
+
+  <div class="bot-page-content">
+    <div id="bot-page-image">Bot image</div>
+    <p>Olá! O que temos para hoje? 🤖</p>
+  </div>
+
+  <div class="bot-page-input-section">
+    <input id="bot-page-input" type="text" placeholder="Digite sua mensagem aqui...">
+    <button id="bot-page-send-button" class="send-button">></button>
+  </div>
 </section>
 
 <nav class="bottom-nav" id="bottom-nav" hidden>

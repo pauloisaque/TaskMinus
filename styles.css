@@ -94,3 +94,299 @@ body {
     cursor: not-allowed;
     box-shadow: none;
 }
+
+.task-item {
+    margin: 8px 0;
+    padding: 12px;
+    border-radius: 10px;
+    background: #f9f9f9;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+}
+
+.task-div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.task-complete-checkbox {
+    width: 18px;
+    height: 18px;
+    accent-color: #000; /* usa cor preta para check */
+    cursor: pointer;
+}
+
+.task-title {
+    flex: 1;
+    font-size: 15px;
+    font-weight: 600;
+    color: #111;
+}
+
+.task-delete-button {
+    padding: 6px 10px;
+    border: 1px solid #000;
+    background: #fff;
+    color: #000;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.task-delete-button:hover {
+    background: #000;
+    color: #fff;
+}
+
+.task-input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 14px;
+    outline: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+:root {
+  --bottom-nav-height: 60px;
+  --actions-gap: 16px;
+  --actions-height: 56px;
+}
+
+.bottom-nav {
+  z-index: 2000;
+  height: var(--bottom-nav-height);
+}
+
+/* Header fixo no topo */
+#tasks-screen-page { padding-top: 64px; }
+
+.tasks-screen-page-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 64px;
+  padding: 8px 12px;
+  display: grid;
+  grid-template-columns: 56px 1fr 56px;
+  align-items: center;
+  background: #fff;
+  border-bottom: 1px solid #000;
+  z-index: 1500;
+}
+
+.tasks-screen-page-header h2 {
+  grid-column: 2;
+  justify-self: center;
+  margin: 0;
+}
+
+/* Lupa e Lua redondos com emoji grande */
+.tasks-screen-page-header .tasks-screen-page-search-button,
+.tasks-screen-page-header .tasks-screen-page-dark-mode-button {
+  position: static;
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid #000;
+  background: #fff;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0;
+}
+
+.tasks-screen-page-header .tasks-screen-page-search-button::before {
+  content: '🔎';
+  font-size: 28px;
+  line-height: 1;
+}
+.tasks-screen-page-header .tasks-screen-page-dark-mode-button::before {
+  content: '🌙';
+  font-size: 28px;
+  line-height: 1;
+}
+
+/* Lista e ações abaixo */
+#tasks-screen-page-task-list {
+  margin: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Ações com proporção 75% (tarefa) / 25% (projeto) */
+#tasks-screen-page-actions {
+  margin: 16px;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 12px;
+  margin-bottom: 80px;
+}
+
+#tasks-screen-page-add-task-button,
+#tasks-screen-page-add-project-button {
+  height: 56px;
+  border-radius: 12px;
+  border: 1px solid #000;
+  background: #fff;
+  color: #000;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+#tasks-screen-page-add-task-button:hover,
+#tasks-screen-page-add-project-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+```/* Header fixo no topo */
+#tasks-screen-page { padding-top: 64px; }
+
+.tasks-screen-page-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 64px;
+  padding: 8px 12px;
+  display: grid;
+  grid-template-columns: 56px 1fr 56px;
+  align-items: center;
+  background: #fff;
+  border-bottom: 1px solid #000;
+  z-index: 1500;
+}
+
+.tasks-screen-page-header h2 {
+  grid-column: 2;
+  justify-self: center;
+  margin: 0;
+}
+
+/* Lupa e Lua redondos com emoji grande */
+.tasks-screen-page-header .tasks-screen-page-search-button,
+.tasks-screen-page-header .tasks-screen-page-dark-mode-button {
+  position: static;
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid #000;
+  background: #fff;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0;
+}
+
+.tasks-screen-page-header .tasks-screen-page-search-button::before {
+  content: '🔎';
+  font-size: 28px;
+  line-height: 1;
+}
+.tasks-screen-page-header .tasks-screen-page-dark-mode-button::before {
+  content: '🌙';
+  font-size: 28px;
+  line-height: 1;
+}
+
+/* Lista e ações abaixo */
+#tasks-screen-page-task-list {
+  margin: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Ações com proporção 75% (tarefa) / 25% (projeto) */
+#tasks-screen-page-actions {
+  margin: 16px;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 12px;
+  margin-bottom: 80px;
+}
+
+#tasks-screen-page-add-task-button,
+#tasks-screen-page-add-project-button {
+  height: 56px;
+  border-radius: 12px;
+  border: 1px solid #000;
+  background: #fff;
+  color: #000;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+#tasks-screen-page-add-task-button:hover,
+#tasks-screen-page-add-project-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+/* Bot�es add-button no canto inferior */
+.add-button {
+  position: fixed;
+  bottom: 70px;
+  height: 56px;
+  width: 56px;
+  border-radius: 12px;
+  border: 1px solid #000;
+  background: #fff;
+  color: #000;
+  font-size: 28px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease;
+  z-index: 1800;
+}
+
+.add-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+#tasks-screen-page-add-project-button {
+  right: 20px;
+}
+
+#tasks-screen-page-add-task-button {
+  right: 90px;
+}
+
+/* Atualizar lista de tarefas para ser scrollável */
+#tasks-screen-page-task-list {
+  height: calc(100vh - 64px - 70px - 60px) !important;
+  overflow-y: auto !important;
+  padding-bottom: 16px !important;
+}
+
