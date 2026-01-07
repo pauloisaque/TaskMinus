@@ -1,130 +1,108 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-        <meta charset="UTF-8">
-        <link rel="manifest" href="app.webmanifest">
-        <meta name="theme-color" content="#1976d2">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Tela de login</title>
-</head>
-<body>
-        <header>
-                <button id="back-button" class="back-button"><</button>
-                <button>Lixeira</button>
-                <button>Três pontinhos</button>
-        </header>
 
-        <section id="tela-primeira-page">
-                <button id="dark-mode" class="dark-mode-button">Emoji da lua</button>
-                <h1>Não tem uma <strong>conta</strong> ainda? blah blah blah</h1>
-                <h2>Cadastre-se.</h2>
-                <a class="google-button" id="google-signin" href="pages/tarefas/tela-tarefas.html">Continuar com o Google</a>
-        </section>
+<meta charset="UTF-8">
+<link rel="manifest" href="app.webmanifest">
+<meta name="theme-color" content="#1976d2">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+<title>Tela de login</title>
 
-        <section id="projeto-page">
-                <div>
-                        <button id="back-button" class="back-button"><</button>
-                        <h2 id="project-name">Nome do Projeto</h2>
-                        <button>Três pontinhos</button>
-                </div>
-                <div>
-                        <span>Prazo do projeto: </span>
-                </div>
-                <div id="project-progress-bar" class="project-progress-bar">
-                        1/3
-                </div>
-        </section>
+<section id="login-page" class="page">
+  <button id="login-page-dark-mode-button" class="dark-mode-button">Emoji da lua</button>
+  <h1>Não tem uma <strong>conta</strong> ainda? blah blah blah</h1>
+  <h2>Cadastre-se.</h2>
+  <a id="login-page-google-login-button">Continuar com o Google</a>
+  <button id="start-system-button" class="button">Iniciar sistema</button>
+</section>
 
-        <section id="task-page">
-                <div>Tarefa 1</div>
-                <button>+ Adicionar tag</button>
-                <linebreak></linebreak>
-                <div>Prazo: 01/01/2023</div>
-                <button>Adicionar lembrete</button>
-                <linebreak></linebreak>
-                <div>
-                        <h2>SUBTASKS</h2>
-                        <button id="Lupa-subtasks" class="search-button-subtasks">Lupa</button>
-                </div>
-                <div id="subtask-list" class="subtask-list">
+<section id="project-page" class="page" hidden>
+  <div>
+    <button id="project-page-back-button" class="back-button"><</button>
+    <h2 id="project-page-project-name">Nome do Projeto</h2>
+    <button id="project-page-more-options-button" class="more-options-button">Três pontinhos</button>
+  </div>
+  <div>
+    <span>Prazo do projeto: </span>
+  </div>
+  <div id="project-page-progress-bar">
+    1/3
+  </div>
+</section>
 
-                </div>
-                <button id="add-subtask-button" class="add-subtask-button">Adicionar subtask</button>
-        </section>
+<section id="task-page" class="page" hidden>
+  <div>
+    <button id="task-page-back-button" class="back-button"><</button>
+    <button id="task-page-trash-button">Lixeira</button>
+    <button id="task-page-more-options-button">Três pontinhos</button>
+  </div>
+  <h2 id="task-page-task-name">Tarefa 1</h2>
+  <button id="task-page-add-tag-button" class="button">+ Adicionar tag</button>
+  <div>Prazo: <span id="task-page-due-date">01/01/2023</span></div>
+  <button id="task-page-add-reminder-button" class="button">Adicionar lembrete</button>
+  <div>
+    <h2>SUBTASKS</h2>
+    <button id="task-page-search-subtask-button" class="button">Lupa</button>
+  </div>
+  <div id="task-page-subtask-list"></div>
+  <button id="task-page-add-subtask-button" class="button">Adicionar subtask</button>
+</section>
 
-        <section id="tela-tarefas-page">
-                <h2>Tarefas</h2> 
-                        <button class="search-button" id="search-button">Lupa</button>
-                        <button id="dark-mode" class="dark-mode-button">Emoji da lua</button>
-    
-                <div id="task-list" class="task-list"></div>
-                <nav class="bottom-nav" id="bottom-nav">
-                        <button id="add-project-button" class="add-project-button">+</button>
-                        <button id="add-task-button" class="add-task-button">+</button>
-                        <div id="tarefas-link">Tarefas</div>
-                        <div id="bot-link">Bot</div>
-                        <div id="configuracoes-link">Configurações</div>
-                </nav>
-        </section>
+<section id="tasks-screen-page" class="page" hidden>
+  <button id="tasks-screen-page-search-button" class="button">Lupa</button>
+  <button id="tasks-screen-page-dark-mode-button" class="dark-mode-button">Emoji da lua</button>
+  <h2>Tarefas</h2> 
+  <div id="tasks-screen-page-task-list"></div>
+  <button id="tasks-screen-page-add-project-button" class="add-button">+</button>
+  <button id="tasks-screen-page-add-task-button" class="add-button">+</button>
+</section>
 
-        <section id="configuracoes-page">
-                                <button id="back-button" class="back-button"><</button>
-                <h2>Configurações</h2>
-                <div>foto da pessoa</div>
-                <button>Alterar foto</button>
-                <div>
-                        <p>Nome da pessoa</p>
-                        <button>Alterar nome</button>
-                </div>
-                <div>
-                        <button>Notificações</button>
-                        <button>Backup</button>
-                        <button>Histórico de atividades</button>
-                        <button>Histórico de tarefas concluídas</button>
-                        <div>
-                                <p>Escolher tema</p>
-                                <button>Padrão</button>
-                        </div>
-                        <div>
-                                <p>Aumentar fonte</p>
-                                <button>-</button>
-                                <span>Aa</span>
-                                <button>+</button>
-                        </div>
-                </div>
-        </section>
+<section id="configurations-page" class="page" hidden>
+  <button id="configurations-page-back-button" class="back-button"><</button>
+    <h2>Configurações</h2>
+    <div id="configurations-page-profile-photo">(foto da pessoa)</div>
+    <button id="configurations-page-change-photo-button" class="button">Alterar foto</button>
+  <div>
+    <p id="configurations-page-profile-name">Nome da pessoa</p>
+    <button id="configurations-page-change-name-button" class="button">Alterar nome</button>
+  </div>
+  <div>
+    <button id="configurations-page-notifications-button" class="button">Notificações</button>
+    <button id="configurations-page-backup-button" class="button">Backup</button>
+    <button id="configurations-page-activity-history-button" class="button">Histórico de atividades</button>
+    <button id="configurations-page-completed-tasks-history-button" class="button">Histórico de tarefas concluídas</button>
+    <div>
+      <p>Escolher tema</p>
+      <button id="configurations-page-theme-choice-button" class="button">(Padrão)</button>
+    </div>
+    <div>
+      <p>Aumentar fonte</p>
+      <button id="configurations-page-decrease-font-button" class="button">-</button>
+      <span>Aa</span>
+      <button id="configurations-page-increase-font-button" class="button">+</button>
+    </div>
+  </div>
+</section>
 
-        <section id="historico-atividades-page">
-                
-        </section>
+<section id="history-activities-page" class="page" hidden>
+</section>
 
-        <section id="historico-tarefas-page">
-                
-        </section>
+<section id="history-tasks-page" class="page" hidden>
+</section>
 
-        <section id="tela-bot-page">
-                <button id="back-button" class="back-button"><</button>
-                <h2>Bot</h2>
-                <button id="informations-button" class="information-button">i</button>
-                <div>Bot image</div>
-                <p>Olá! O que temos para hoje? 🤖</p>
-                <input type="text" id="user-input" placeholder="Digite sua mensagem aqui...">
-                <button id="send-button">></button>
-                <nav class="bottom-nav" id="bottom-nav">
-                        <button id="add-task-button" class="add-task-button">+</button>
-                        <div id="tarefas-link">Tarefas</div>
-                        <div id="bot-link">Bot</div>
-                        <div id="configuracoes-link">Configurações</div>
-                </nav>
-        </section>
+<section id="bot-page" class="page" hidden>
+  <button id="bot-page-back-button" class="back-button"><</button>
+  <h2>Bot</h2>
+  <button id="bot-page-information-button" class="button">i</button>
+  <div id="bot-page-image">Bot image</div>
+  <p>Olá! O que temos para hoje? 🤖</p>
+  <input id="bot-page-input" type="text" placeholder="Digite sua mensagem aqui...">
+  <button id="bot-page-send-button" class="send-button">></button>
+</section>
 
-        <nav class="bottom-nav" id="bottom-nav">
-                <button id="add-task-button" class="add-task-button">+</button>
-                <div id="tarefas-link">Tarefas</div>
-                <div id="bot-link">Bot</div>
-                <div id="configuracoes-link">Configurações</div>
-        </nav>
+<nav class="bottom-nav" id="bottom-nav" hidden>
+  <div id="bottom-nav-tasks-link">Tarefas</div>
+  <div id="bottom-nav-bot-link">Bot</div>
+  <div id="bottom-nav-configurations-link">Configurações</div>
+</nav>
 
-        <script src="app.js" type="module" defer></script>
-</body>
-</html>
+<script src="app.js" type="module" defer></script>

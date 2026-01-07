@@ -1,12 +1,19 @@
-import TaskList from "./services/TaskList.js";
-import API from "./services/API.js";
-import { loadData } from "./services/Tasks.js";
-import Router from "./services/Router.js";
+import { openPage } from './services/router.js';  
+import { linkTo } from './utils/methods.js';
+import { _ } from './utils/elements.js';
+import './services/pages/taskPage.js';
 
-window.app = {};
-app.tasklist = TaskList;
-app.router = Router;
+openPage('login-page');
 
-window.addEventListener("DOMContentLoaded", async () => {
-    await loadData();
-});
+linkTo(_.startSystemButton, 'tasks-screen-page');
+
+linkTo(_.bottomNavTasksLink, 'tasks-screen-page');
+linkTo(_.bottomNavBotLink, 'bot-page');
+linkTo(_.bottomNavConfigurationsLink, 'configurations-page');
+
+linkTo(_.loginPageGoogleLoginButton, 'tasks-screen-page');
+linkTo(_.botPageBackButton, 'tasks-screen-page');
+linkTo(_.taskPageBackButton, 'tasks-screen-page');
+linkTo(_.configurationsPageBackButton, 'tasks-screen-page');
+linkTo(_.projectPageBackButton, 'tasks-screen-page');
+
