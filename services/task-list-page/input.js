@@ -66,7 +66,12 @@ function createSendButton() {
     const button = document.createElement('button');
     button.type = 'button';
     button.className = 'send-task-button';
-    button.textContent = 'Enviar Task';
+    button.innerHTML = `
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 3l18 9-18 9V3z"/>
+            <path d="M3 12h18"/>
+        </svg>
+    `;
     return button;
 }
 

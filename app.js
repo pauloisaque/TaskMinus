@@ -1,7 +1,7 @@
 import { openPage } from './services/router.js';  
 import { linkTo } from './utils/methods.js';
 import { _ } from './utils/elements.js';
-import './services/task-page/task-page.js';
+import './services/task-list-page/task-list-page.js';
 
 openPage('login-page');
 

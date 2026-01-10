@@ -157,7 +157,7 @@ body {
 }
 
 .task-input {
-    width: 100%;
+    width: 60%;
     padding: 10px 12px;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -166,13 +166,68 @@ body {
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
+.date-input {
+    width: 15%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 14px;
+    outline: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.emoji-input {
+    width: 10%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 20px;
+    background: #fff;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: all 0.2s ease;
+}
+
+.emoji-input:hover {
+    background: #f5f5f5;
+    transform: scale(1.05);
+}
+
+.send-task-button {
+    width: 15%;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.send-task-button:hover {
+    background: #333;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.send-task-button:active {
+    transform: translateY(0);
+}
+
 .input-elements {
     width: 100vw;
     margin: 0;
-    padding: 16px;
+    padding: 12px 16px;
     display: flex;
-    flex-direction: column;
-    gap: 12px;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
     border-radius: 0;
     background: #f9f9f9;
     border-bottom: 1px solid #e5e5e5;

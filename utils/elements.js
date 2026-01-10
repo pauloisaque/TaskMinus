@@ -17,6 +17,7 @@ export const _ = {
     taskPageTaskName : $('task-page-task-name'),
     taskPageAddTagButton : $('task-page-add-tag-button'),
     taskPageDueDate : $('task-page-due-date'),
+    taskPageDueDateInput : $('task-page-due-date-input'),
     taskPageAddReminderButton : $('task-page-add-reminder-button'),
     taskPageSearchSubtaskButton : $('task-page-search-subtask-button'),
     taskPageSubtaskList : $('task-page-subtask-list'),
