@@ -40,17 +40,26 @@ function setupDragEvents(taskItem, task, updateCallback) {
 
     // === EVENTOS MOBILE (Touch) ===
     let touchStartY = 0;
+    let touchStartTime = 0;
+    let touchTimer = null;
+    let isLongPress = false;
     
     taskItem.addEventListener('touchstart', (e) => {
-        draggedTask = task;
-        draggedElement = taskItem;
         touchStartY = e.touches[0].clientY;
-        taskItem.style.opacity = '0.5';
-        taskItem.style.transition = 'none';
+        touchStartTime = Date.now();
+        isLongPress = false;
+        
+        touchTimer = setTimeout(() => {
+            draggedTask = task;
+            draggedElement = taskItem;
+            taskItem.style.opacity = '0.5';
+            taskItem.style.transition = 'none';
+            isLongPress = true;
+        }, 700);
     });
 
     taskItem.addEventListener('touchmove', (e) => {
-        if (!draggedElement) return;
+        if (!isLongPress || !draggedElement) return;
         
         e.preventDefault();
         const touch = e.touches[0];
@@ -77,7 +86,14 @@ function setupDragEvents(taskItem, task, updateCallback) {
     });
 
     taskItem.addEventListener('touchend', (e) => {
-        if (!draggedElement) return;
+        clearTimeout(touchTimer);
+        
+        if (!draggedElement || !isLongPress) {
+            draggedTask = null;
+            draggedElement = null;
+            isLongPress = false;
+            return;
+        }
         
         const touch = e.changedTouches[0];
         
