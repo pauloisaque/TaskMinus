@@ -14,6 +14,16 @@ function createAddDateInput() {
     return input;
 }
 
+const EMOJIS = ['🆘', '👀', '🗿', '⚠️', '🚨', '💥', '⏰', '🔥', '🚀', '🎯', '⚡',
+    '⭐', '💪', '✅', '🔝', '🔜', '☑️', '✔️', '❗', '‼️', '💯', '❌', '🚫',
+    '🔴', '🔵', '🟢', '🔹', '🔺', '🔻',
+    '📌', '📍', '📈', '📉', '🔎', '💡', '💼', '📝', '📚', '🧹', '🏫',
+    '♠️', '♣️', '♥️', '♦️', '♟️'];
+
+function pickRandomEmoji() {
+    return EMOJIS[Math.floor(Math.random() * EMOJIS.length)];
+}
+
 function createEmojiModal(onSelect) {
     const modal = document.createElement('div');
     modal.className = 'emoji-modal';
@@ -21,10 +31,7 @@ function createEmojiModal(onSelect) {
     const content = document.createElement('div');
     content.className = 'emoji-modal-content';
     
-    const emojis = ['😊', '🎉', '💼', '📚', '🏃', '💪', '🎯', '⭐', '🔥', '✅', '📝', '🚀',
-                     '❤️', '🌟', '🎨', '📱', '💻', '🎵', '🍕', '☕', '🌈', '🦄', '🐱', '🐶'];
-    
-    emojis.forEach(emoji => {
+    EMOJIS.forEach(emoji => {
         const btn = document.createElement('button');
         btn.textContent = emoji;
         btn.className = 'emoji-option';
@@ -49,7 +56,8 @@ function createAddEmojiInput() {
     const button = document.createElement('button');
     button.type = 'button';
     button.className = 'emoji-input';
-    button.textContent = '😊'; // emoji padrão
+    const defaultEmoji = pickRandomEmoji();
+    button.textContent = defaultEmoji;
     
     button.addEventListener('click', () => {
         const modal = createEmojiModal((selectedEmoji) => {

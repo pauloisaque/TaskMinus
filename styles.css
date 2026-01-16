@@ -231,6 +231,10 @@ body {
     border-radius: 0;
     background: #f9f9f9;
     border-bottom: 1px solid #e5e5e5;
+    position: sticky;
+    bottom: calc(var(--bottom-nav-height) + 8px);
+    z-index: 1500;
+    scroll-margin-bottom: calc(var(--bottom-nav-height) + 8px);
 }
 
 :root {
@@ -304,9 +308,13 @@ body {
 /* Lista e ações abaixo */
 #tasks-screen-page-task-list {
   margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
   gap: 8px;
+  max-height: calc(100vh - 0px - 60px - 100px);
+  overflow-y: auto;
+  padding-right: 8px;
 }
 
 /* Ações com proporção 75% (tarefa) / 25% (projeto) */
@@ -473,7 +481,6 @@ body {
   gap: 0 !important;
   width: 100vw !important;
   height: calc(100vh - 64px) !important;
-  margin-top: 64px !important;
   overflow-y: auto !important;
 }
 
